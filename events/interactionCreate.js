@@ -1,7 +1,7 @@
 const {
     Collection,
     Events
-} = require('discord.js');
+} = require("discord.js");
 
 module.exports = {
     name: Events.InteractionCreate,
@@ -49,12 +49,12 @@ module.exports = {
             console.error(error);
             if (interaction.replied || interaction.deferred) {
                 await interaction.followUp({
-                    content: 'There was an error while executing this command!',
+                    content: "There was an error while executing this command!",
                     ephemeral: true
                 });
             } else {
                 await interaction.reply({
-                    content: 'There was an error while executing this command!',
+                    content: "There was an error while executing this command!",
                     ephemeral: true
                 });
             }
