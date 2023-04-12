@@ -1,5 +1,6 @@
-# Config Files
+# Config and SQLite Files
 scary_file.json
+json.sqlite
 
 # Logs
 logs
