@@ -18,7 +18,7 @@ module.exports = {
         .addIntegerOption(option =>
             option
                 .setName("index")
-                .setDescription("The plus or minus rep index (1 is always the latest one)")
+                .setDescription("The plus or minus rep index (1 is always the first one)")
                 .setRequired(true)
         )
         .addUserOption(option =>
