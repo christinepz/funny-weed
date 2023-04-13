@@ -34,7 +34,7 @@ module.exports = {
         const embed = new EmbedBuilder();
 
         if (interaction.options.getBoolean("valid")) {
-            try {
+            if (!stats.plus[index]) return interaction.reply("No +rep log was found on that index.");
                 embed
                     .setAuthor({ name: `${user.tag} (from: ${stats.plus[index][1]})`, iconURL: user.avatarURL({ size: 128 }) })
                     .addFields(
@@ -42,11 +42,8 @@ module.exports = {
                         { name: "Timestamp:", value: `${stats.plus[index][2]}` },
                     )
                     .setColor("Green");
-            } catch (error) {
-                return interaction.reply(error);
-            }
         } else {
-            try {
+            if (!stats.plus[index]) return interaction.reply("No -rep log was found on that index.");
                 embed
                     .setAuthor({ name: `${user.tag} (from: ${stats.minus[index][1]})`, iconURL: user.avatarURL({ size: 128 }) })
                     .addFields(
@@ -54,9 +51,6 @@ module.exports = {
                         { name: "Timestamp:", value: `${stats.minus[index][2]}` },
                     )
                     .setColor("Red");
-            } catch (error) {
-                return interaction.reply(error);
-            }
         }
         await interaction.reply({ embeds: [embed] });
     },
